@@ -1,5 +1,7 @@
 package conHashSet_TreeSet;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.TreeSet;
 import java.util.Vector;
 //Preguntar por el casting a jefe que hice pero a obrero no le hice nada
 //Preguntar por la visibilidad del campo codigo y autonumerico
@@ -9,11 +11,14 @@ import java.util.Vector;
 public class Empresa {
 	static Scanner in =new Scanner(System.in);
 	Vector<Empleado> listaEmpleados;
-	
+	HashSet<Empleado> hashSetPersona;
+	TreeSet<Empleado> sortedSetPersona;
+ 	
 	
 
 	public Empresa() {
-		super();
+		this.sortedSetPersona = new TreeSet<Empleado>();
+		this.hashSetPersona= new HashSet<Empleado>();
 		this.listaEmpleados = new Vector<Empleado>();
 	}
 	
@@ -36,7 +41,9 @@ public class Empresa {
 		if (tipoE.equalsIgnoreCase("J")) {
 			Jefe j = new Jefe();
 
-			listaEmpleados.addElement(j);
+			//listaEmpleados.addElement(j);
+			hashSetPersona.add(j);
+			sortedSetPersona.add(j);
 		}
 
 		if (tipoE.equalsIgnoreCase("O")) {
@@ -58,7 +65,9 @@ public class Empresa {
 				System.out.println("***");
 				System.out.println("dando de alta obrero");				
 				Obrero o = new Obrero(jAux);//Me salto un error y le añadi un casting Arriba en el instanceOf
-				listaEmpleados.addElement(o);
+				///listaEmpleados.addElement(o);
+				hashSetPersona.add(o);
+				sortedSetPersona.add(o);
 
 				System.out.println("Insertando en el array del jefe");
 				jAux.insertarEnArray(o);
@@ -100,7 +109,7 @@ public class Empresa {
 	//metodos de ayuda
 	public void listarTodo() {
 		Obrero oAux = null;
-		for (int i = 0; i < listaEmpleados.size(); i++) {
+/*		for (int i = 0; i < listaEmpleados.size(); i++) {
 			if (listaEmpleados.get(i) instanceof Obrero) {
 				oAux=(Obrero)listaEmpleados.get(i);
 				if (oAux.getJefe()==null) {
@@ -116,7 +125,19 @@ public class Empresa {
 				System.out.println(listaEmpleados.get(i).toString());
 			}
 			
+		}*/
+		
+		System.out.println("hashSet");
+		for (Empleado empleado : hashSetPersona) {
+			System.out.println(empleado.toString());
 		}
+		System.out.println("sorted");
+		for (Empleado empleado : sortedSetPersona) {
+			System.out.println(empleado.toString());
+		}
+		
+		
+		
 
 	}
 	/***************************************************************************************************************/
