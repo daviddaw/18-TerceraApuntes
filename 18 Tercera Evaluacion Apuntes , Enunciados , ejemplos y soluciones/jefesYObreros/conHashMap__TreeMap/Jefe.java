@@ -1,4 +1,4 @@
-package conHashMap;
+package conHashMap__TreeMap;
 
 import java.util.ArrayList;
 
@@ -63,6 +63,31 @@ public class Jefe extends Empleado {
 			}
 		}
 		
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + ((listaObreros == null) ? 0 : listaObreros.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Jefe other = (Jefe) obj;
+		if (listaObreros == null) {
+			if (other.listaObreros != null)
+				return false;
+		} else if (!listaObreros.equals(other.listaObreros))
+			return false;
+		return true;
 	}
 	
 	

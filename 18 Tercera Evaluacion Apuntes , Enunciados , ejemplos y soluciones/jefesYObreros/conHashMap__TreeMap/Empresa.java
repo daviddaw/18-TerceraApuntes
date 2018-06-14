@@ -1,4 +1,5 @@
-package conHashMap;
+package conHashMap__TreeMap;
+import java.util.HashMap;
 import java.util.Scanner;
 import java.util.Vector;
 //Preguntar por el casting a jefe que hice pero a obrero no le hice nada
@@ -7,14 +8,18 @@ import java.util.Vector;
 //Preguntar donde se inicia el array de los jefes al principio a null
 
 public class Empresa {
+	//
 	static Scanner in =new Scanner(System.in);
 	Vector<Empleado> listaEmpleados;
+
+	HashMap<String, Empleado> hashEmpleados;
 	
 	
 
 	public Empresa() {
 		super();
-		this.listaEmpleados = new Vector<Empleado>();
+		//this.listaEmpleados = new Vector<Empleado>();
+		this.hashEmpleados= new HashMap<String, Empleado>();
 	}
 	
 /***************************************************************************************************************/
@@ -36,7 +41,8 @@ public class Empresa {
 		if (tipoE.equalsIgnoreCase("J")) {
 			Jefe j = new Jefe();
 
-			listaEmpleados.addElement(j);
+			//listaEmpleados.addElement(j);
+			hashEmpleados.put(tipoE, j);
 		}
 
 		if (tipoE.equalsIgnoreCase("O")) {
@@ -58,7 +64,8 @@ public class Empresa {
 				System.out.println("***");
 				System.out.println("dando de alta obrero");				
 				Obrero o = new Obrero(jAux);//Me salto un error y le añadi un casting Arriba en el instanceOf
-				listaEmpleados.addElement(o);
+			//	listaEmpleados.addElement(o);
+				hashEmpleados.put(tipoE, o);
 
 				System.out.println("Insertando en el array del jefe");
 				jAux.insertarEnArray(o);
@@ -80,7 +87,7 @@ public class Empresa {
 
 	/***************************************************************************************************************/
 
-	//metodos de ayuda
+	//metodos de ayuda-----
 	private Empleado buscarStringLista(String codigo) {
 		boolean encontrado=false;
 		Empleado e = null;
@@ -99,7 +106,8 @@ public class Empresa {
 
 	//metodos de ayuda
 	public void listarTodo() {
-		Obrero oAux = null;
+		/*Obrero oAux = null;
+		System.out.println("lista");
 		for (int i = 0; i < listaEmpleados.size(); i++) {
 			if (listaEmpleados.get(i) instanceof Obrero) {
 				oAux=(Obrero)listaEmpleados.get(i);
@@ -116,7 +124,16 @@ public class Empresa {
 				System.out.println(listaEmpleados.get(i).toString());
 			}
 			
+		}*/
+		
+		System.out.println("HashMap");
+		
+		for (String key  : hashEmpleados.keySet()) {
+			System.out.println(" Clave "+key+" valor "+hashEmpleados.get(key));
 		}
+
+		
+		
 
 	}
 	/***************************************************************************************************************/
@@ -131,6 +148,9 @@ public class Empresa {
 			}
 		} while (porcentaje<0 || porcentaje>100);
 		double nuevoSueldo;
+		
+		
+		///////////////////////////////////////////////////
 		for (int i = 0; i < listaEmpleados.size(); i++) {
 
 			System.out.println("antes de la subida"+listaEmpleados.get(i).toString());
@@ -145,6 +165,9 @@ public class Empresa {
 			listaEmpleados.get(i).setSueldo(nuevoSueldo);
 			System.out.println("despues de la subida"+listaEmpleados.get(i).toString());
 		}
+		
+		
+		
 
 
 	}
@@ -221,6 +244,7 @@ public class Empresa {
 				//Si es un jefe, a todos sus obreros se les pondrá null en el campo Jefe.
 				jAux.quitarJefeDelEmpleado();	
 			}
+			/////
 			listaEmpleados.remove(e);
 		}
 		

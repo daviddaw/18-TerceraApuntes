@@ -9,7 +9,6 @@
 	<classpathentry kind="src" path="agenda"/>
 	<classpathentry kind="src" path="jefesYObreros"/>
 	<classpathentry kind="src" path="gasolinera"/>
-	<classpathentry kind="src" path="examenPorMi"/>
 	<classpathentry kind="src" path="solucionExamen"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -1,4 +1,4 @@
-package conHashMap;
+package conHashSet_TreeSet;
 
 public abstract class Empleado {
     static int autonumerico;

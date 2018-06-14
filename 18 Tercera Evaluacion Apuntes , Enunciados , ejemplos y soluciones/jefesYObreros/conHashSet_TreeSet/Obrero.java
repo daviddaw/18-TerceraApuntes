@@ -1,4 +1,4 @@
-package conHashMap;
+package conHashSet_TreeSet;
 
 public class Obrero extends Empleado {
     static int autonumerico2;

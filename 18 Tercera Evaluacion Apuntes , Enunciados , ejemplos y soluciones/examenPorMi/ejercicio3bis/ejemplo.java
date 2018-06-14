@@ -1,3 +1,0 @@
-package ejercicio3bis;
-
-	

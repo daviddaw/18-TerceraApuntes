@@ -1,4 +1,4 @@
-package conHashMap;
+package conHashMap__TreeMap;
 
 import java.util.Scanner;
 
