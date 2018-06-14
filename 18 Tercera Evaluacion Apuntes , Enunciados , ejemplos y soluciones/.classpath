@@ -3,5 +3,13 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="juni2018"/>
+	<classpathentry kind="src" path="junio_2017_primer"/>
+	<classpathentry kind="src" path="mecanicos_averias"/>
+	<classpathentry kind="src" path="matrices"/>
+	<classpathentry kind="src" path="agenda"/>
+	<classpathentry kind="src" path="jefesYObreros"/>
+	<classpathentry kind="src" path="gasolinera"/>
+	<classpathentry kind="src" path="examenPorMi"/>
+	<classpathentry kind="src" path="solucionExamen"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
